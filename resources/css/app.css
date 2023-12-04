@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.active {
+    @apply bg-blue-700 text-white hover:bg-blue-700 md:bg-transparent md:text-blue-700 md:hover:bg-transparent;
+}
+
+.unactive {
+    @apply text-gray-900 hover:bg-gray-100 md:hover:text-blue-700 md:bg-transparent md:hover:bg-transparent;
+}
