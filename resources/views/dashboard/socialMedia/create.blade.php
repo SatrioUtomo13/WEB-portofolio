@@ -1,7 +1,7 @@
 @extends('dashboard.main')
 
 @section('content')
-    <section class="w-1/2">
+    <section class="w-full lg:w-1/2">
         @if ($errors->any())
             <div id="alert-2" class="w-full flex items-center p-4 mb-4 text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
                 <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">

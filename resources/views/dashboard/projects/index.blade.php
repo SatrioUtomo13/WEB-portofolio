@@ -24,7 +24,7 @@
         <div class="flex flex-col space-y-5 md:flex-row md:space-y-0 md:justify-between">
             <a href="/dashboard/project/create" class="text-center px-5 py-3 font-semibold text-xl text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 rounded-lg lg:py-3 lg:text-lg lg:font-medium">Add Project</a>
 
-            <form class="w-1/2">
+            <form class="w-full md:w-1/2">
                 <div class="relative">
                     <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                         <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">

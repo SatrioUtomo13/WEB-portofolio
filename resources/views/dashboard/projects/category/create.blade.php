@@ -1,7 +1,7 @@
 @extends('dashboard.main')
 
 @section('content')
-    <div class="w-1/2">
+    <div class="w-full lg:w-1/2">
         @error('name')
             <div id="alert-2" class="w-full flex items-center p-4 mb-4 text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
                 <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -18,7 +18,7 @@
             </div>
         @enderror
 
-        <h1 class="font-montserrat font-semibold text-4xl text-gray-800">Add Category</h1>
+        <h1 class="font-montserrat font-semibold text-4xl text-gray-800 mb-3">Add Category</h1>
 
         <form action="/dashboard/projectCategories" method="POST">
             @csrf
