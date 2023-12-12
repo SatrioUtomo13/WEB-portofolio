@@ -12,8 +12,22 @@ class PostCategoryController extends Controller
      */
     public function index()
     {
+        $categories = PostCategory::query(); //create query builder
+
+        /* 
+        * check user request
+        * create var keyword
+        * search name like $keyword
+        */
+        if (request('keyword')) {
+            $keyword = request('keyword');
+            $categories->where('name', 'like', "%$keyword%");
+        }
+
+        $categories = $categories->get(); //get query builder
+
         return view('dashboard.posts.category.index', [
-            "categories" => PostCategory::all()
+            "categories" => $categories
         ]);
     }
 

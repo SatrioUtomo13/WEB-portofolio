@@ -13,8 +13,18 @@ class SkillController extends Controller
      */
     public function index()
     {
+        $skills = Skill::query();
+
+        if (request('keyword')) {
+            $keyword = request('keyword');
+            $skills->where('name', 'like', "%$keyword%")
+                ->orWhere('description', 'like', "%$keyword%");
+        }
+
+        $skills = $skills->get();
+
         return view('dashboard.skills.index', [
-            "skills" => Skill::all()
+            "skills" => $skills
         ]);
     }
 

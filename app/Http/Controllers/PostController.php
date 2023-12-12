@@ -13,8 +13,22 @@ class PostController extends Controller
      */
     public function index()
     {
+        $posts = Post::query(); //create query builder
+
+        /* 
+        * check user request
+        * create var keyword
+        * search title like $keyword
+        */
+        if (request('keyword')) {
+            $keyword = request('keyword');
+            $posts->where('title', 'like',  "%$keyword%");
+        }
+
+        $posts = $posts->get(); //get query builder
+
         return view('dashboard.posts.index', [
-            "posts" => Post::all()
+            "posts" => $posts
         ]);
     }
 

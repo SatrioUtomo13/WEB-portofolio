@@ -12,8 +12,22 @@ class ProjectCategoryController extends Controller
      */
     public function index()
     {
+        $categories = ProjectCategory::query(); //create query builder
+
+        /* 
+        * check user request
+        * create var keyword
+        * search name like $keyword
+        */
+        if (request('keyword')) {
+            $keyword = request('keyword');
+            $categories->where('name', 'like', "%$keyword%");
+        }
+
+        $categories = $categories->get(); //get query builder
+
         return view('dashboard.projects.category.index', [
-            "categories" => ProjectCategory::all()
+            "categories" => $categories
         ]);
     }
 

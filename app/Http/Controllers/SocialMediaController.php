@@ -12,8 +12,22 @@ class SocialMediaController extends Controller
      */
     public function index()
     {
+        $socialmedia = SocialMedia::query(); // create query builder
+
+        /* 
+        * if request exist : 
+        * create $keyword
+        * search title like $keyword
+        */
+        if (request('keyword')) {
+            $keyword = request('keyword');
+            $socialmedia->where('title', 'like', "%$keyword%");
+        }
+
+        $socialmedia = $socialmedia->get(); // get query
+
         return view('dashboard.socialMedia.index', [
-            "socialMedias" => SocialMedia::all()
+            "socialMedias" => $socialmedia
         ]);
     }
 

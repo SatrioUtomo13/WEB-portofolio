@@ -13,8 +13,23 @@ class ProjectController extends Controller
      */
     public function index()
     {
+        $projects = Project::query(); //create query builder
+
+        /* 
+        * check user request
+        * create var keyword
+        * search name like $keyword
+        */
+        if (request('keyword')) {
+            $keyword = request('keyword');
+            $projects->where('name', 'like', "%$keyword%")
+                ->orWhere('technology', 'like', "%$keyword%");
+        }
+
+        $projects = $projects->get(); //get query builder
+
         return view('dashboard.projects.index', [
-            "projects" => Project::all()
+            "projects" => $projects
         ]);
     }
 
