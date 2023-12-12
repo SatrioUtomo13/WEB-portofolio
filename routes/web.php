@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\ChangePassword;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
@@ -43,9 +42,6 @@ Route::get('/dashboard', function () {
 
 /* === PROFILE === */
 Route::resource('/dashboard/user', ProfileController::class);
-
-/* === CHANGE PASSWORD ===*/
-Route::resource('/dashboard/changepassword', ChangePassword::class)->only(['edit', 'update']);
 
 /* === PROJECT === */
 Route::resource('/dashboard/project', ProjectController::class);
