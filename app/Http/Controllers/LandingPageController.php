@@ -46,7 +46,8 @@ class LandingPageController extends Controller
 
         return view('showProject', [
             "project" => $project,
-            "name" => $name
+            "name" => $name,
+            "media" => $this->socialMedia()
         ]);
     }
 
